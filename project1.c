@@ -80,7 +80,7 @@ void view_task()
             printf("[   ]");
         else if(state[i] == 1)
             printf("[ V ]");
-        else if(state[1] == 2)
+        else if(state[i] == 2)
             printf("[ X ]");
         printf("%d. %s\n", i, task[i]);
     }
