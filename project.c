@@ -84,5 +84,27 @@ void view_task()
             printf("[ X ]");
         printf("%d. %s\n", i, task[i]);
     }
+
+void add_task()
+{
+    char temp[101];
+    while(1)
+    {
+        printf("할일을 입력하세요 : ");
+        fgets(temp,sizeof(temp),stdin);
+        if((temp[0] == "Q" || temp[0] == "q") && temp[1] == "\n")
+            break;
+        else
+        {
+            temp[100] = 0;
+            strncpy(task[count], temp, 100);
+            count++;
+        }
+
+    
+        printf("\n");
+        printf("할 일 추가 완료\n");
+    }
+}
     printf("---------------------------------------------------------------------------\n");
 }
