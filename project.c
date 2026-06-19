@@ -74,16 +74,30 @@ void print_menu()
 
 void view_task()
 {
-    for(int i = 0; i <= count - 1; i++)
+    char temp[10];
+    if(count == 0)
+        printf("등록된 할 일이 없습니다.\n");
+    else
     {
-        if(state[i] == 0)
-            printf("[   ]");
-        else if(state[i] == 1)
-            printf("[ V ]");
-        else if(state[i] == 2)
-            printf("[ X ]");
-        printf("%d. %s\n", i, task[i]);
+        for(int i = 0; i <= count - 1; i++)
+        {
+            if(state[i] == 0)
+                printf("[   ]");
+            else if(state[i] == 1)
+                printf("[ V ]");
+            else if(state[i] == 2)
+                printf("[ X ]");
+            printf("%d. %s\n", i, task[i]);
+        }
+        printf("---------------------------------------------------------------------------\n");
     }
+    while(1)
+    {
+        fgets(temp,sizeof(temp),stdin);
+        if(strncmp(temp, "Q\n", 10) == 0 || strncmp(temp, "q\n", 10) == 0)
+            break;
+    }
+}
 
 void add_task()
 {
@@ -92,7 +106,7 @@ void add_task()
     {
         printf("할일을 입력하세요 : ");
         fgets(temp,sizeof(temp),stdin);
-        if((temp[0] == "Q" || temp[0] == "q") && temp[1] == "\n")
+        if(strncmp(temp, "Q\n", 101) == 0 || strncmp(temp, "q\n", 101) == 0)
             break;
         else
         {
