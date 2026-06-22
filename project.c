@@ -124,7 +124,7 @@ void view_task()
 
 void add_task()
 {
-    char input[100];
+    char input[1000];
     printf("Q를 입력하면 메인 화면으로 돌아갑니다.\n");
 
     while (1)
@@ -137,12 +137,18 @@ void add_task()
         if (quit(input))
             return;
 
-        if (strlen(input) == 0)
+        else if (strlen(input) == 0)
         {
             continue;
         }
 
-        if (count >= 100)
+        else if (strlen(input) > 100)
+        {
+            printf("입력된 문자수가 100보다 큽니다. 다시 입력해주세요\n");
+            continue;
+        }
+
+        else if (count >= 100)
         {
             printf("할 일이 너무 많습니다. 더 이상 추가할 수 없습니다.\n");
             return;
@@ -268,6 +274,4 @@ void delete_task()
         }
     }
     return;
-}
-    printf("---------------------------------------------------------------------------\n");
 }
