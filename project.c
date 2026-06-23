@@ -165,7 +165,7 @@ void add_task()
 
 int decide_num()
 {
-    char input[30];
+    char input[100];
     int value;
 
     fgets(input, sizeof(input), stdin);
