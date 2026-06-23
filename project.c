@@ -19,30 +19,31 @@ int  decide_num();
 
 int main(void)
 {
-    int menu;
+    char menu;
 
     while (1)
     {
         print_menu();
 
-        scanf("%d", &menu);
-        getchar();
+        scanf(" %c", &menu);
+        while(getchar() != '\n'); // abcd\n
+
 
         switch (menu)
         {
-            case 1:
+            case '1':
                 view_task();
                 break;
-            case 2:
+            case '2':
                 add_task();
                 break;
-            case 3:
+            case '3':
                 complete_task();
                 break;
-            case 4:
+            case '4':
                 delete_task();
                 break;
-            case 5:
+            case '5':
                 printf("프로그램을 종료합니다.\n");
                 return 0;
             default:
