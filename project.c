@@ -7,9 +7,9 @@ int count = 0;    // 현재 만든 일 수
 int selecte_num = 0;
 
 // 함수 선언
-void print_menu();
+void print_menu();    //메인화면 함수
 void wait_q();   
-int  quit(char input[]);
+int  quit(char input[]);    //q 또는 Q 입력 시 메인화면 귀환
 void view_task();    //할 일 보기 함수
 void add_task();    //할 일 추가 함수
 void complete_task();    //할 일 완료 함수
