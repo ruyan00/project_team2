@@ -3,7 +3,7 @@
 
 char task[100][100];
 int state[100];    // 0: 진행중, 1: 완료, 2: 삭제
-int count = 0;    // 현재 만든 일 수
+int count = 0;    // 현재 등록된 할 일 수
 int selecte_num = 0;
 
 // 함수 선언
